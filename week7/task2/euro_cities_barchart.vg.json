@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "The Cheapest Cities"
+    },
+    "data": {
+        "url": "cheapest_cities.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "daily_cost",
+            "type": "quantitative",
+            "title": "Daily Cost"
+        },
+        "y": {
+            "field": "city",
+            "type": "nominal",
+            "title": null
+        }
+    }
+}
