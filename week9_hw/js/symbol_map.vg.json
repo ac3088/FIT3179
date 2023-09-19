@@ -1,0 +1,59 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 450,
+    "title": "Big Tsunamis",
+    "projection": {
+        "type": "equalEarth"
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "js/ne_110m_admin_0_countries.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_110m_admin_0_countries"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "lightgray",
+                "stroke": "white"
+            }
+        },
+        {
+            "data": {
+                "url": "data/tsunami_dataset.csv"
+            },
+            "mark": {
+                "type": "circle",
+                "tooltip": {
+                    "content": "data"
+                }
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "LONGITUDE",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "LATITUDE",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "TS_INTENSITY",
+                    "type": "quantitative",
+                    "title": "Intensity"
+                },
+                "color": {
+                    "field": "EQ_DEPTH",
+                    "type": "quantitative",
+                    "title": "Depth in km of inciting earthquake",
+                    "scale": {
+                        "scheme": "bluegreen"
+                    }
+                }
+            }
+        }
+    ]
+}
