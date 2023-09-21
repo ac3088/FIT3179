@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 450,
+    "title": "Impact of Natural Disasters Globally (1900 - 2021)",
+    "projection": {
+        "type": "equalEarth"
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "js/ne_110m_admin_0_countries.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_110m_admin_0_countries"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "lightgray",
+                "stroke": "white"
+            }
+        },
+        {
+            "data": {
+                "url": "data/1900_2021_normalised.csv"
+            },
+            "mark": {
+                "type": "circle"
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "Longitude",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "Latitude",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Disaster Type",
+                    "type": "nominal",
+                    "title": "Total Affected",
+                    "scale": {
+                        "scheme": "rainbow"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Country",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "Year",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "Disaster Type",
+                        "title": "Type"
+                    },
+                    {
+                        "field": "Total Affected",
+                        "title": "Total Affected"
+                    },
+                    {
+                        "field": "Longitude"
+                    },
+                    {
+                        "field": "Latitude"
+                    }
+                ]
+            }
+        }
+    ]
+}
