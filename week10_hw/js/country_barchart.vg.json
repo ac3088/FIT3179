@@ -1,0 +1,60 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Deadliest Countries in terms of Natural Disasters",
+    "data": {
+        "url": "data/1960-2020-countries-impact.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.total_num_deaths > 100000"
+        },
+        {
+            "filter": {
+                "not": {
+                    "field": "country",
+                    "oneOf": [
+                        "World",
+                        "Asia",
+                        "Europe",
+                        "Low-income countries",
+                        "Lower-middle-income countries",
+                        "Upper-middle-income countries",
+                        "European Union (27)",
+                        "Africa",
+                        "High-income countries",
+                        "North America",
+                        "South America"
+                    ]
+                }
+            }
+        }
+    ],
+    "layer": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "country",
+                    "type": "nominal",
+                    "sort": "-y",
+                    "title": "Country"
+                },
+                "y": {
+                    "field": "total_num_deaths",
+                    "type": "quantitative",
+                    "title": "Total Deaths"
+                },
+                "tooltip": [
+                    {
+                        "field": "country",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "total_num_deaths",
+                        "title": "Total Deaths"
+                    }
+                ]
+            }
+        }
+    ]
+}
