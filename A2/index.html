@@ -7,18 +7,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
+    <script src="js/script.js"></script>
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+    <!-- Title Font-->
+    <link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
 </head>
 
 <body>
+    <h1 id="title">The Impact of Natural Disasters</h1>
+    <p class="text">
+        Since 1960, over 10,000 natural disasters have been reported around the world.
+    </p>
     <div id="symbol_map"></div>
-    <script type="text/javascript">
-        var spec2 = "js/symbol_map.vg.json";
-        vegaEmbed('#symbol_map', spec2).then(function (result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
+    <p class="text">
+        In total, these disasters have caused nearly 4 trillion USD in damages, and taken over 5 million lives.
+    </p>
+    <div>
+        <div id="country_barchart"></div>
+        <div id="dtype_linechart"></div>
+    </div>
 </body>
 
 </html>

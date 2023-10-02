@@ -1,0 +1,20 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Deadliest Disasters",
+    "data": {
+        "url": "data/1960-2020-dtype-impact.csv"
+    },
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "temporal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "eq_deaths",
+            "type": "quantitative",
+            "title": "Deaths From Earthquakes"
+        }
+    }
+}

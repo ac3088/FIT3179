@@ -1,8 +1,13 @@
-#symbol_map {
-    top: 100px;
-    bottom: 100px;
-    left: 100px;
-    right: 100px;
-    /*height: 1000px;
-	width: 800px;*/
+/* #symbol_map {
+    
+} */
+
+#title {
+    font-family: 'Chalkduster', sans-serif;
+    color: cadetblue;
+}
+
+.text {
+    font-family: 'Times New Roman', Times, serif;
+    color: darkslategray;
 }

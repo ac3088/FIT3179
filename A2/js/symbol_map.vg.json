@@ -2,7 +2,6 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 450,
-    "title": "Natural Disasters Around the World (1960 - 2018)",
     "projection": {
         "type": "equalEarth"
     },
@@ -23,7 +22,7 @@
         },
         {
             "data": {
-                "url": "data/1960_2018.csv"
+                "url": "data/1960-2018-geodata.csv"
             },
             "mark": {
                 "type": "circle"
@@ -79,6 +78,40 @@
                     }
                 ]
             }
+        },
+        {
+            "data": {
+                "url": "data/countries.csv"
+            },
+            "transform": [
+                {
+                    "filter": "datum['Country'] == 'Australia' || datum['Country'] == 'United States' || datum['Country'] == 'United Kingdom'|| datum['Country'] == 'China' || datum['Country'] == 'South Africa' || datum['Country'] == 'Brazil'"
+                }
+            ],
+            "encoding": {
+                "longitude": {
+                    "field": "Longitude",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "Latitude",
+                    "type": "quantitative"
+                }
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "text",
+                        "fontStyle": "bold"
+                    },
+                    "encoding": {
+                        "text": {
+                            "field": "Country",
+                            "type": "nominal"
+                        }
+                    }
+                }
+            ]
         }
     ]
 }
