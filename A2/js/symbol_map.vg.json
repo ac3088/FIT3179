@@ -22,7 +22,7 @@
         },
         {
             "data": {
-                "url": "data/1960-2018-geodata.csv"
+                "url": "data/emdat-1960-2023.csv"
             },
             "mark": {
                 "type": "circle"
@@ -41,15 +41,15 @@
             ],
             "encoding": {
                 "longitude": {
-                    "field": "longitude",
+                    "field": "Longitude",
                     "type": "quantitative"
                 },
                 "latitude": {
-                    "field": "latitude",
+                    "field": "Latitude",
                     "type": "quantitative"
                 },
                 "color": {
-                    "field": "disastertype",
+                    "field": "Disaster Type",
                     "type": "nominal",
                     "title": "Disaster Type",
                     "scale": {
@@ -65,53 +65,19 @@
                 },
                 "tooltip": [
                     {
-                        "field": "country",
+                        "field": "Country",
                         "title": "Country"
                     },
                     {
-                        "field": "year",
+                        "field": "Start Year",
                         "title": "Year"
                     },
                     {
-                        "field": "disastertype",
+                        "field": "Disaster Type",
                         "title": "Type"
                     }
                 ]
             }
-        },
-        {
-            "data": {
-                "url": "data/countries.csv"
-            },
-            "transform": [
-                {
-                    "filter": "datum['Country'] == 'Australia' || datum['Country'] == 'United States' || datum['Country'] == 'United Kingdom'|| datum['Country'] == 'China' || datum['Country'] == 'South Africa' || datum['Country'] == 'Brazil'"
-                }
-            ],
-            "encoding": {
-                "longitude": {
-                    "field": "Longitude",
-                    "type": "quantitative"
-                },
-                "latitude": {
-                    "field": "Latitude",
-                    "type": "quantitative"
-                }
-            },
-            "layer": [
-                {
-                    "mark": {
-                        "type": "text",
-                        "fontStyle": "bold"
-                    },
-                    "encoding": {
-                        "text": {
-                            "field": "Country",
-                            "type": "nominal"
-                        }
-                    }
-                }
-            ]
         }
     ]
 }

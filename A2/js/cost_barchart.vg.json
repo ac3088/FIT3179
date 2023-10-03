@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Damage Done By Disasters",
+    "data": {
+        "url": "data/1960-2023-impact-by-country.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum['Total Damage Adjusted'] >= 70000000"
+        }
+    ],
+    "layer": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "sort": "-y",
+                    "title": "Country",
+                    "axis": {
+                        "labelLimit": 60,
+                        "labelAngle": -60
+                    }
+                },
+                "y": {
+                    "field": "Total Damage Adjusted",
+                    "type": "quantitative",
+                    "title": "Total Damage (USD)"
+                },
+                "tooltip": [
+                    {
+                        "field": "Country",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "Total Damage Adjusted",
+                        "title": "Total Damage (USD)",
+                        "format": ","
+                    }
+                ]
+            }
+        }
+    ]
+}
