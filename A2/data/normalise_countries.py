@@ -9,9 +9,9 @@ def to_num(s):
     return float(s)
 
 def merge_rows(row1, row2):
-    res = [row1[0]]
+    res = [row1[0], row1[1]]
 
-    for i in range(1, len(row1)):
+    for i in range(2, len(row1)):
         res.append(to_num(row1[i]) + to_num(row2[i]))
     
     return res
@@ -22,11 +22,12 @@ countries = dict()
 # Longitude = Index  23
 
 # Country = Index 10
+# Region = Index 12
 # Total deaths = Index 31
 # Total Affected = Index 35
 # Total Damage Adjusted ('000USD)= Index 41
-col_titles = ['Country', 'Total Deaths', 'Total Affected', 'Total Damage Adjusted', 'Number of Disasters']
-columns = [10, 31, 35, 41]
+col_titles = ['Country', 'Region', 'Total Deaths', 'Total Affected', 'Total Damage Adjusted', 'Number of Disasters']
+columns = [10, 12, 31, 35, 41]
 
 if __name__ == "__main__":
     with open(SOURCE_FILE, 'r', encoding='utf-8') as source, open(DESTINATION_FILE, 'w', newline='', encoding='utf-8') as destination:
@@ -37,7 +38,7 @@ if __name__ == "__main__":
             if line[10] != 'Country':
                 country = line[10]
                 if country not in countries:
-                    countries[country] = [country, to_num(line[31]), to_num(line[35]), to_num(line[41]), 1]
+                    countries[country] = [country, line[12], to_num(line[31]), to_num(line[35]), to_num(line[41]), 1]
                 else:
                     old_row = countries[country]
                     current_row = [line[i] for i in columns] + [1]

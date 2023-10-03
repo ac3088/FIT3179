@@ -43,7 +43,7 @@
                     },
                     {
                         "field": "Number of Disasters",
-                        "title": "Number of Disasters (1960-2023)",
+                        "title": "Number of Reported Disasters (1960-2023)",
                         "format": ","
                     }
                 ]

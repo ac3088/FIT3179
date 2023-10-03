@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "data/1960-2023-impact-by-country.csv"
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Number of Disasters",
+                    "as": "num_dis"
+                }
+            ],
+            "groupby": [
+                "Region"
+            ]
+        }
+    ],
+    "mark": {
+        "type": "arc",
+        "tooltip": true
+    },
+    "encoding": {
+        "color": {
+            "field": "Region",
+            "type": "nominal"
+        },
+        "theta": {
+            "field": "num_dis",
+            "type": "quantitative",
+            "title": "Number of Reported Disasters (1960-2023)"
+        }
+    }
+}
