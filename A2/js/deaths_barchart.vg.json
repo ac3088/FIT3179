@@ -19,14 +19,17 @@
                     "sort": "-y",
                     "title": "Country",
                     "axis": {
-                        "labelLimit": 60,
+                        "labelLimit": 40,
                         "labelAngle": -60
                     }
                 },
                 "y": {
                     "field": "Total Deaths",
                     "type": "quantitative",
-                    "title": "Total Deaths"
+                    "title": "Total Deaths",
+                    "axis": {
+                        "format": ","
+                    }
                 },
                 "tooltip": [
                     {
@@ -36,6 +39,11 @@
                     {
                         "field": "Total Deaths",
                         "title": "Total Deaths",
+                        "format": ","
+                    },
+                    {
+                        "field": "Number of Disasters",
+                        "title": "Number of Disasters (1960-2023)",
                         "format": ","
                     }
                 ]

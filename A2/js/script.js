@@ -3,12 +3,14 @@ vegaEmbed('#symbol_map', symbolMap).then(function (result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-var deathsBarChart = "js/deaths_barchart.vg.json";
-vegaEmbed('#deaths_barchart', deathsBarChart).then(function (result) {
-
+var deathsBarchart = "js/deaths_barchart.vg.json";
+vegaEmbed('#deaths_barchart', deathsBarchart).then(function (result) {
 }).catch(console.error);
 
-var costBarChart = "js/cost_barchart.vg.json";
-vegaEmbed('#cost_barchart', costBarChart).then(function (result) {
+var costBarchart = "js/cost_barchart.vg.json";
+vegaEmbed('#cost_barchart', costBarchart).then(function (result) {
+}).catch(console.error);
 
+var affectedScatterplot = "js/affected_scatterplot.vg.json";
+vegaEmbed('#affected_scatterplot', affectedScatterplot).then(function (result) {
 }).catch(console.error);

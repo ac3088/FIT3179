@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "How Many People are Affected by Disasters",
+    "data": {
+        "url": "data/emdat-1960-2023.csv"
+    },
+    "params": [
+        {
+            "name": "Affected_Above",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 200000000,
+                "step": 1000,
+                "name": "Minimum Affected People: "
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "datum['Total Affected'] > Affected_Above"
+        }
+    ],
+    "mark": "point",
+    "encoding": {
+        "x": {
+            "field": "Start Year",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "Total Affected",
+            "type": "quantitative",
+            "axis": {
+                "format": ","
+            }
+        },
+        "color": {
+            "field": "Region",
+            "type": "nominal"
+        },
+        "tooltip": [
+            {
+                "field": "Country",
+                "title": "Country"
+            },
+            {
+                "field": "Disaster Type",
+                "title": "Type of Disaster"
+            },
+            {
+                "field": "Start Year",
+                "title": "Starting Year",
+                "type": "temporal",
+                "format": "%Y"
+            },
+            {
+                "field": "Total Affected",
+                "title": "Total Number of Affected People",
+                "format": ","
+            }
+        ]
+    }
+}

@@ -22,7 +22,7 @@
         },
         {
             "data": {
-                "url": "data/emdat-1960-2023.csv"
+                "url": "data/emdat-1960-2023-normalised.csv"
             },
             "mark": {
                 "type": "circle"
@@ -33,7 +33,7 @@
                     "select": {
                         "type": "point",
                         "fields": [
-                            "disastertype"
+                            "Disaster Type"
                         ]
                     },
                     "bind": "legend"
@@ -61,7 +61,7 @@
                         "param": "dtype",
                         "value": 1
                     },
-                    "value": 0
+                    "value": 0.05
                 },
                 "tooltip": [
                     {

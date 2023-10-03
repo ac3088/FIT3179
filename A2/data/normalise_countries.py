@@ -18,15 +18,18 @@ def merge_rows(row1, row2):
 
 countries = dict()
 # Start Year = Index 25
+# Latitude = Index 22
+# Longitude = Index  23
+
 # Country = Index 10
 # Total deaths = Index 31
 # Total Affected = Index 35
 # Total Damage Adjusted ('000USD)= Index 41
-col_titles = ['Country', 'Total Deaths', 'Total Affected', 'Total Damage Adjusted']
+col_titles = ['Country', 'Total Deaths', 'Total Affected', 'Total Damage Adjusted', 'Number of Disasters']
 columns = [10, 31, 35, 41]
 
 if __name__ == "__main__":
-    with open(SOURCE_FILE, 'r', encoding='utf-8') as source, open(DESTINATION_FILE, 'w', encoding='utf-8') as destination:
+    with open(SOURCE_FILE, 'r', encoding='utf-8') as source, open(DESTINATION_FILE, 'w', newline='', encoding='utf-8') as destination:
         reader = csv.reader(source, delimiter=',')
         writer = csv.writer(destination, delimiter=',')
 
@@ -34,10 +37,10 @@ if __name__ == "__main__":
             if line[10] != 'Country':
                 country = line[10]
                 if country not in countries:
-                    countries[country] = [country, to_num(line[31]), to_num(line[35]), to_num(line[41])]
+                    countries[country] = [country, to_num(line[31]), to_num(line[35]), to_num(line[41]), 1]
                 else:
                     old_row = countries[country]
-                    current_row = [line[i] for i in columns]
+                    current_row = [line[i] for i in columns] + [1]
                     new_row = merge_rows(old_row, current_row)
                     countries[country] = new_row
 
