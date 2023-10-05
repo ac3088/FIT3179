@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "whitesmoke",
+    "title": "Natural Disasters per Region Over Time",
+    "width": 375,
+    "data": {
+        "url": "data/emdat-1960-2023.csv"
+    },
+    "mark": "area",
+    "encoding": {
+        "x": {
+            "field": "Start Year",
+            "type": "temporal",
+            "title": "Year"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "DisNo.",
+            "type": "quantitative",
+            "title": "Number of Disasters"
+        },
+        "color": {
+            "field": "Region",
+            "legend": null
+        },
+        "tooltip": [
+            {
+                "field": "Region",
+                "type": "nominal"
+            },
+            {
+                "field": "Start Year",
+                "title": "Year",
+                "type": "temporal",
+                "format": "%Y"
+            },
+            {
+                "field": "DisNo.",
+                "aggregate": "count",
+                "type": "quantitative",
+                "title": "Number of Reported Disasters (1960-2023)"
+            }
+        ]
+    }
+}

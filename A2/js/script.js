@@ -23,6 +23,11 @@ vegaEmbed('#region_piechart', regionPiechart).then(function (result) {
 
 }).catch(console.error);
 
+var regionStackedBarchart = "js/charts/region_stacked_barchart.vg.json";
+vegaEmbed('#region_stacked_barchart', regionStackedBarchart).then(function (result) {
+
+}).catch(console.error);
+
 var dtypePieChart = "js/charts/dtype_piechart.vg.json";
 vegaEmbed('#dtype_piechart', dtypePieChart).then(function (result) {
 
