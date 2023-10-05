@@ -1,12 +1,43 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Damage Done By Disasters",
+    "title": "The Cost of Disasters",
     "data": {
-        "url": "data/1960-2023-impact-by-country.csv"
+        "url": "data/emdat-1960-2023.csv"
     },
     "transform": [
         {
-            "filter": "datum['Total Damage Adjusted'] >= 70000000"
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Total Damage, Adjusted (\\'000 US$)",
+                    "as": "total_damage_adjusted"
+                },
+                {
+                    "op": "count",
+                    "field": "DisNo.",
+                    "as": "num_dis"
+                }
+            ],
+            "groupby": [
+                "Country"
+            ]
+        },
+        {
+            "window": [
+                {
+                    "op": "rank",
+                    "as": "rank"
+                }
+            ],
+            "sort": [
+                {
+                    "field": "total_damage_adjusted",
+                    "order": "descending"
+                }
+            ]
+        },
+        {
+            "filter": "datum['rank'] <= 10"
         }
     ],
     "layer": [
@@ -24,7 +55,7 @@
                     }
                 },
                 "y": {
-                    "field": "Total Damage Adjusted",
+                    "field": "total_damage_adjusted",
                     "type": "quantitative",
                     "title": "Total Damage (USD)",
                     "axis": {
@@ -37,12 +68,12 @@
                         "title": "Country"
                     },
                     {
-                        "field": "Total Damage Adjusted",
+                        "field": "total_damage_adjusted",
                         "title": "Total Damage (USD)",
                         "format": ","
                     },
                     {
-                        "field": "Number of Disasters",
+                        "field": "num_dis",
                         "title": "Number of Reported Disasters (1960-2023)",
                         "format": ","
                     }

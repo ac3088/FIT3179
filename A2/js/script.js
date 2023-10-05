@@ -18,10 +18,10 @@ vegaEmbed('#affected_scatterplot', affectedScatterplot).then(function (result) {
 
 }).catch(console.error);
 
-var regionPiechart = "js/charts/region_piechart.vg.json";
-vegaEmbed('#region_piechart', regionPiechart).then(function (result) {
+// var regionPiechart = "js/charts/region_piechart.vg.json";
+// vegaEmbed('#region_piechart', regionPiechart).then(function (result) {
 
-}).catch(console.error);
+// }).catch(console.error);
 
 var dtypePieChart = "js/charts/dtype_piechart.vg.json";
 vegaEmbed('#dtype_piechart', dtypePieChart).then(function (result) {

@@ -22,7 +22,7 @@
         },
         {
             "data": {
-                "url": "data/emdat-1960-2023-normalised.csv"
+                "url": "data/emdat-normalised-long-lat.csv"
             },
             "mark": {
                 "type": "circle"

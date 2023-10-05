@@ -1,7 +1,12 @@
+"""
+Running this file just removes all the rows in 'emdat-1960-2023.csv' that don't have 'Latitude' or 'Longitude' values.
+This normalised dataset is only used for the proportional symbol map.
+"""
+
 import csv
 
-SOURCE_FILE = "FIT3179\\A2\\data\\emdat-1960-2023.csv"
-DESTINATION_FILE = 'FIT3179\\A2\\data\\emdat-1960-2023-normalised.csv'
+SOURCE_FILE = "A2\\data\\emdat-1960-2023.csv"
+DESTINATION_FILE = 'A2\\data\\emdat-normalised-long-lat.csv'
 
 # Latitude = Index 22
 # Longitude = Index  23

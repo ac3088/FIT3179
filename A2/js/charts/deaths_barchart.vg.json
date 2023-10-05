@@ -2,11 +2,42 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Deadliest Countries",
     "data": {
-        "url": "data/1960-2023-impact-by-country.csv"
+        "url": "data/emdat-1960-2023.csv"
     },
     "transform": [
         {
-            "filter": "datum['Total Deaths'] >= 100000"
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Total Deaths",
+                    "as": "total_deaths"
+                },
+                {
+                    "op": "count",
+                    "field": "DisNo.",
+                    "as": "num_dis"
+                }
+            ],
+            "groupby": [
+                "Country"
+            ]
+        },
+        {
+            "window": [
+                {
+                    "op": "rank",
+                    "as": "rank"
+                }
+            ],
+            "sort": [
+                {
+                    "field": "total_deaths",
+                    "order": "descending"
+                }
+            ]
+        },
+        {
+            "filter": "datum['rank'] <= 10"
         }
     ],
     "layer": [
@@ -24,7 +55,7 @@
                     }
                 },
                 "y": {
-                    "field": "Total Deaths",
+                    "field": "total_deaths",
                     "type": "quantitative",
                     "title": "Total Deaths",
                     "axis": {
@@ -37,12 +68,12 @@
                         "title": "Country"
                     },
                     {
-                        "field": "Total Deaths",
+                        "field": "total_deaths",
                         "title": "Total Deaths",
                         "format": ","
                     },
                     {
-                        "field": "Number of Disasters",
+                        "field": "num_dis",
                         "title": "Number of Reported Disasters (1960-2023)",
                         "format": ","
                     }
