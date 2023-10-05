@@ -4,6 +4,7 @@
     "view": {
         "stroke": "whitesmoke"
     },
+    "height": 300,
     "data": {
         "url": "data/emdat-1960-2023.csv"
     },

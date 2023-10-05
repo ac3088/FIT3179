@@ -1,19 +1,11 @@
-#title {
+.title {
     font-family: 'Chalkduster', sans-serif;
     color: cadetblue;
 }
 
-.text_1 {
+.text {
     font-family: sans-serif;
     color: darkslategray;
-    /* width: 58%; */
-}
-
-.text_2 {
-    font-family: sans-serif;
-    color: darkslategray;
-    /* width: 58%; */
-    padding-bottom: 5px;
 }
 
 #deaths_barchart {
@@ -34,25 +26,9 @@
     position: absolute;
 }
 
-.text_3 {
-    font-family: sans-serif;
-    color: darkslategray;
-    float: left;
-    /* width: 28%; */
-    /* padding-right: 20px; */
-}
-
-#section_4 {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.text_4 {
-    font-family: sans-serif;
-    color: darkslategray;
-    float: left;
-    /* width: 28%; */
-    /* padding-right: 20px; */
+#avg_deaths_barchart {
+    padding-left: 40px;
+    padding-right: 100px;
 }
 
 .storms {
