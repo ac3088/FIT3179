@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "data/emdat-1960-2023.csv"
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Total Deaths",
+                    "as": "avg_deaths"
+                }
+            ],
+            "groupby": [
+                "Disaster Type"
+            ]
+        }
+    ],
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Disaster Type",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "avg_deaths",
+            "type": "quantitative",
+            "title": "Average Deaths"
+        }
+    }
+}

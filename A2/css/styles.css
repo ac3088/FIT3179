@@ -1,13 +1,33 @@
-#symbol_map {
-    align-items: center;
-}
-
 #title {
     font-family: 'Chalkduster', sans-serif;
     color: cadetblue;
 }
 
 .text {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: sans-serif;
     color: darkslategray;
+}
+
+.text_1 {
+    font-family: sans-serif;
+    color: darkslategray;
+    float: left;
+    width: 60%;
+}
+
+.text_2 {
+    font-family: sans-serif;
+    color: darkslategray;
+    float: left;
+    width: 37%;
+}
+
+.storms {
+    color: #87E695;
+    font-weight: bold;
+}
+
+.floods {
+    color: #E3914B;
+    font-weight: bold;
 }
