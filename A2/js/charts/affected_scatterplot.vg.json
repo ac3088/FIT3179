@@ -19,6 +19,16 @@
                 "step": 1000,
                 "name": "Minimum Affected People: "
             }
+        },
+        {
+            "name": "selected_region",
+            "select": {
+                "type": "point",
+                "fields": [
+                    "Region"
+                ]
+            },
+            "bind": "legend"
         }
     ],
     "transform": [
@@ -42,6 +52,13 @@
         "color": {
             "field": "Region",
             "type": "nominal"
+        },
+        "opacity": {
+            "condition": {
+                "param": "selected_region",
+                "value": 1
+            },
+            "value": 0
         },
         "tooltip": [
             {

@@ -83,6 +83,10 @@
                 "format": "%Y"
             },
             {
+                "field": "Disaster Type",
+                "type": "nominal"
+            },
+            {
                 "field": "total_damage_adjusted",
                 "type": "quantitative",
                 "title": "Total Damage (USD)",
