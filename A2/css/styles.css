@@ -6,13 +6,13 @@
 .text_1 {
     font-family: sans-serif;
     color: darkslategray;
-    width: 58%;
+    /* width: 58%; */
 }
 
 .text_2 {
     font-family: sans-serif;
     color: darkslategray;
-    width: 58%;
+    /* width: 58%; */
     padding-bottom: 5px;
 }
 
@@ -34,25 +34,25 @@
     position: absolute;
 }
 
-.text_10 {
+.text_3 {
     font-family: sans-serif;
     color: darkslategray;
     float: left;
-    width: 28%;
-    padding-right: 20px;
+    /* width: 28%; */
+    /* padding-right: 20px; */
 }
 
-#section_11 {
+#section_4 {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.text_11 {
+.text_4 {
     font-family: sans-serif;
     color: darkslategray;
     float: left;
-    width: 28%;
-    padding-right: 20px;
+    /* width: 28%; */
+    /* padding-right: 20px; */
 }
 
 .storms {
