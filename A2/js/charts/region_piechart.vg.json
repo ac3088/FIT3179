@@ -1,14 +1,14 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-        "url": "data/1960-2023-impact-by-country.csv"
+        "url": "data/emdat-1960-2023.csv"
     },
     "transform": [
         {
             "aggregate": [
                 {
-                    "op": "sum",
-                    "field": "Number of Disasters",
+                    "op": "count",
+                    "field": "DisNo.",
                     "as": "num_dis"
                 }
             ],
