@@ -1,6 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "background": "whitesmoke",
+    "view": {
+        "stroke": "whitesmoke"
+    },
     "data": {
         "url": "data/emdat-1960-2023.csv"
     },

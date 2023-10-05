@@ -1,6 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "background": "whitesmoke",
+    "view": {
+        "stroke": "whitesmoke"
+    },
     "title": "Natural Disasters per Region Over Time",
     "width": 375,
     "data": {

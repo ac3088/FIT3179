@@ -10,8 +10,8 @@
 }
 
 #deaths_barchart {
-    padding-left: 40px;
-    padding-right: 100px;
+    padding-left: 60px;
+    padding-right: 50px;
 }
 
 #region_piechart {
@@ -19,8 +19,8 @@
 }
 
 #cost_barchart {
-    padding-left: 40px;
-    padding-right: 100px;
+    padding-left: 60px;
+    padding-right: 50px;
 }
 
 #cost_linechart {
@@ -28,8 +28,8 @@
 }
 
 #avg_deaths_barchart {
-    padding-left: 40px;
-    padding-right: 100px;
+    padding-left: 60px;
+    padding-right: 50px;
 }
 
 #dtype_piechart {

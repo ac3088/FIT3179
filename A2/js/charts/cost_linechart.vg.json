@@ -2,9 +2,35 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Total Damages per Year",
     "background": "whitesmoke",
+    "view": {
+        "stroke": "whitesmoke"
+    },
     "data": {
         "url": "data/emdat-1960-2023.csv"
     },
+    "params": [
+        {
+            "name": "cost_above",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 200000000,
+                "step": 1000,
+                "name": "Minimum Cost (USD): "
+            }
+        },
+        {
+            "name": "dtype",
+            "select": {
+                "type": "point",
+                "fields": [
+                    "Disaster Type"
+                ]
+            },
+            "bind": "legend"
+        }
+    ],
     "transform": [
         {
             "aggregate": [
@@ -15,8 +41,12 @@
                 }
             ],
             "groupby": [
-                "Start Year"
+                "Start Year",
+                "Disaster Type"
             ]
+        },
+        {
+            "filter": "datum['total_damage_adjusted'] >= cost_above"
         }
     ],
     "mark": "line",
@@ -33,6 +63,17 @@
             "axis": {
                 "format": "$"
             }
+        },
+        "color": {
+            "field": "Disaster Type",
+            "type": "nominal"
+        },
+        "opacity": {
+            "condition": {
+                "param": "dtype",
+                "value": 1
+            },
+            "value": 0.05
         },
         "tooltip": [
             {
