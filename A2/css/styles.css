@@ -3,31 +3,104 @@
     color: cadetblue;
 }
 
-.text {
-    font-family: sans-serif;
-    color: darkslategray;
-}
-
 .text_1 {
     font-family: sans-serif;
     color: darkslategray;
-    float: left;
-    width: 60%;
+    width: 58%;
 }
 
 .text_2 {
     font-family: sans-serif;
     color: darkslategray;
+    width: 58%;
+    padding-bottom: 5px;
+}
+
+#deaths_barchart {
+    padding-left: 40px;
+    padding-right: 100px;
+}
+
+#region_piechart {
+    padding-left: 80px;
+}
+
+#cost_barchart {
+    padding-left: 40px;
+    padding-right: 100px;
+}
+
+#cost_linechart {
+    position: absolute;
+}
+
+.text_10 {
+    font-family: sans-serif;
+    color: darkslategray;
     float: left;
-    width: 25%;
+    width: 28%;
+    padding-right: 20px;
+}
+
+#section_11 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.text_11 {
+    font-family: sans-serif;
+    color: darkslategray;
+    float: left;
+    width: 28%;
+    padding-right: 20px;
 }
 
 .storms {
-    color: #87E695;
+    color: #B99D95;
     font-weight: bold;
 }
 
 .floods {
-    color: #E3914B;
+    color: #AEDD92;
+    font-weight: bold;
+}
+
+.droughts {
+    color: #B8C7E5;
+    font-weight: bold;
+}
+
+.earthquakes {
+    color: #E18534;
+    font-weight: bold;
+}
+
+.extreme_temp {
+    color: #5E9D3D;
+    font-weight: bold;
+}
+
+.africa {
+    color: #5F77A4;
+    font-weight: bold;
+}
+
+.americas {
+    color: #DA8A37;
+    font-weight: bold;
+}
+
+.asia {
+    color: #C7605B;
+    font-weight: bold;
+}
+
+.europe {
+    color: #8BB5B2;
+    font-weight: bold;
+}
+
+.oceania {
+    color: #70A055;
     font-weight: bold;
 }

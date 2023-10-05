@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "The Cost of Disasters",
+    "background": "whitesmoke",
+    "title": "Total Damages by Country",
     "data": {
         "url": "data/emdat-1960-2023.csv"
     },
@@ -70,7 +71,7 @@
                     {
                         "field": "total_damage_adjusted",
                         "title": "Total Damage (USD)",
-                        "format": ","
+                        "format": "$,"
                     },
                     {
                         "field": "num_dis",

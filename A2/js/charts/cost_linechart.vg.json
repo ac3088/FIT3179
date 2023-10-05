@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Total Damages per Year",
+    "background": "whitesmoke",
+    "data": {
+        "url": "data/emdat-1960-2023.csv"
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Total Damage, Adjusted (\\'000 US$)",
+                    "as": "total_damage_adjusted"
+                }
+            ],
+            "groupby": [
+                "Start Year"
+            ]
+        }
+    ],
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "Start Year",
+            "type": "temporal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "total_damage_adjusted",
+            "type": "quantitative",
+            "title": "Total Damages (USD)",
+            "axis": {
+                "format": "$"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Start Year",
+                "type": "temporal",
+                "title": "Year",
+                "format": "%Y"
+            },
+            {
+                "field": "total_damage_adjusted",
+                "type": "quantitative",
+                "title": "Total Damage (USD)",
+                "format": "$,"
+            }
+        ]
+    }
+}

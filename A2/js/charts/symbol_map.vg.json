@@ -1,5 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "whitesmoke",
+    "view": {
+        "fill": "lightblue",
+        "stroke": "black"
+    },
     "width": 800,
     "height": 450,
     "projection": {
@@ -53,7 +58,7 @@
                     "type": "nominal",
                     "title": "Disaster Type",
                     "scale": {
-                        "scheme": "rainbow"
+                        "scheme": "category10"
                     }
                 },
                 "opacity": {

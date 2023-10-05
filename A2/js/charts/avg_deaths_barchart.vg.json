@@ -1,9 +1,26 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "whitesmoke",
     "data": {
         "url": "data/emdat-1960-2023.csv"
     },
+    "params": [
+        {
+            "name": "years_above",
+            "value": 1960,
+            "bind": {
+                "input": "range",
+                "min": 1960,
+                "max": 2020,
+                "step": 1,
+                "name": "Year to Present: "
+            }
+        }
+    ],
     "transform": [
+        {
+            "filter": "datum['Start Year'] >= years_above"
+        },
         {
             "aggregate": [
                 {
@@ -15,18 +32,52 @@
             "groupby": [
                 "Disaster Type"
             ]
+        },
+        {
+            "window": [
+                {
+                    "op": "rank",
+                    "as": "rank"
+                }
+            ],
+            "sort": [
+                {
+                    "field": "avg_deaths",
+                    "order": "descending"
+                }
+            ]
+        },
+        {
+            "filter": "datum['rank'] <= 10"
         }
     ],
     "mark": "bar",
     "encoding": {
         "x": {
             "field": "Disaster Type",
-            "type": "nominal"
+            "type": "nominal",
+            "sort": "-y",
+            "axis": {
+                "labelLimit": 40,
+                "labelAngle": -60
+            }
         },
         "y": {
             "field": "avg_deaths",
             "type": "quantitative",
             "title": "Average Deaths"
-        }
+        },
+        "tooltip": [
+            {
+                "field": "Disaster Type",
+                "type": "nominal"
+            },
+            {
+                "field": "avg_deaths",
+                "type": "quantitative",
+                "title": "Average Deaths",
+                "format": "~r"
+            }
+        ]
     }
 }

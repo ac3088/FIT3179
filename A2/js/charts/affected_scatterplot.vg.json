@@ -1,12 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "How Many People are Affected by Disasters",
+    "background": "whitesmoke",
+    "title": "Total Affected People by Region",
     "data": {
         "url": "data/emdat-1960-2023.csv"
     },
     "params": [
         {
-            "name": "Affected_Above",
+            "name": "affected_above",
             "value": 0,
             "bind": {
                 "input": "range",
@@ -19,7 +20,7 @@
     ],
     "transform": [
         {
-            "filter": "datum['Total Affected'] > Affected_Above"
+            "filter": "datum['Total Affected'] > affected_above"
         }
     ],
     "mark": "point",

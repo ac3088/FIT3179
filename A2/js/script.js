@@ -27,3 +27,13 @@ var dtypePieChart = "js/charts/dtype_piechart.vg.json";
 vegaEmbed('#dtype_piechart', dtypePieChart).then(function (result) {
 
 }).catch(console.error);
+
+var avgDeathsBarchart = "js/charts/avg_deaths_barchart.vg.json";
+vegaEmbed('#avg_deaths_barchart', avgDeathsBarchart).then(function (result) {
+
+}).catch(console.error);
+
+var costLinechart = "js/charts/cost_linechart.vg.json";
+vegaEmbed('#cost_linechart', costLinechart).then(function (result) {
+
+}).catch(console.error);

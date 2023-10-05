@@ -14,18 +14,69 @@
     <link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
 </head>
 
-<body>
-    <h1 id="title">The Impact of Natural Disasters</h1>
-    <p class="text_1">
-        Per IFRC, "Disasters are serious disruptions to the functioning of a community that exceed its capacity to cope
-        using its own resources."
-        <br><br>
-        <span style="font-style: italic;">Natural disasters</span> are those that are caused by severe weather or
-        climate events, or are in some way related to a natural phenomenon, rather than a man-made one.
-    </p>
-    <div id="symbol_map"></div>
-    <div>
+<body style="background-color: whitesmoke;">
+    <div id="section_1">
+        <h1 id="title">The Impact of Natural Disasters</h1>
+        <div>
+            <p class="text_1">
+                Per IFRC, "Disasters are serious disruptions to the functioning of a community that exceed its capacity
+                to
+                cope
+                using its own resources."
+                <br><br>
+                <span style="font-style: italic;">Natural disasters</span> are those that are caused by severe weather
+                or
+                climate events, or are in some way related to a natural phenomenon, rather than a man-made one.
+            </p>
+        </div>
+    </div>
+
+    <div id="section_2">
+        <h2 id="title">Locations</h2>
+        <div id="symbol_map"></div>
         <p class="text_2">
+            When it comes to the human toll of a disaster, <span class="asia">Asia</span> and <span
+                class="africa">Africa</span> have had it the
+            worst, both in terms of the number of overall people affected, and the death tolls they have endured.
+        </p>
+        <div id="deaths_barchart"></div>
+        <div id="affected_scatterplot"></div>
+        <p class="text_2">
+            The bar chart shown above displays the 10 countries who had the largest death toll due to natural disasters
+            since 1960. All of the countries in the top 10 are either <span class="asia">Asian</span> or <span
+                class="africa">African</span>, with the top 3 all being in the South Asia/East Asia region.
+            <br><br>
+            The scatterplot shows every recorded natural disaster (in the dataset) since 1960, plotted against the
+            number of people the disaster affected, with each colour representing a different region. Moving the slider
+            to the right will show disasters which affected <span style="font-weight:bold;">at least</span> that many
+            of people.
+            <br><br>
+            The chart shows that <span class="asia">Asia</span> has the majority of high-impact disasters, including
+            <span style="font-weight: bold;">all</span> disasters that affected over 100 million people.
+        </p>
+        <div id="region_piechart"></div>
+        <p class="text_2">
+            Notably, <span class="asia">Asia</span> has also endured the most natural disasters out of any region,
+            reporting thousands more disasters than the <span class="americas">Americas</span>, more than double the
+            number of disasters in <span class="africa">Africa</span>, and over triple the number of reported disasters
+            in <span class="europe">Europe</span>.
+        </p>
+        <div id="cost_barchart"></div>
+        <div id="cost_linechart"></div>
+        <p class="text_2">
+            When it comes to damages/costs, <span style="font-weight:bold;">The United States</span> has gotten the
+            short end of the stick, with it having lost more than both <span style="font-weight: bold;">China</span> and
+            <span style="font-weight: bold;">Japan</span> combined, which are the second and third most affected nations
+            in this case, respectively.
+            <br><br>
+            Additionally, the cost of natural disasters seems to be increasing over time, with the total damages each
+            year caused by disasters trending upwards.
+        </p>
+    </div>
+
+    <h2 id="title">Types of Disasters</h2>
+    <div id="section_10">
+        <p class="text_10">
             <span class="storms">Storms</span> and <span class="floods">floods</span> are the most common natural
             disasters, accounting for over <span style="font-weight: bold;">50%</span> of reported natural disasters
             since 1960.
@@ -37,17 +88,23 @@
         </p>
         <div id="dtype_piechart"></div>
     </div>
-    <p class="text">
-        In total, these disasters have caused nearly 4 trillion USD in damages, and taken over 5 million lives.
-    </p>
-    <div>
-        <div id="deaths_barchart"></div>
-        <div id="cost_barchart"></div>
-    </div>
-    <div>
-        <div id="affected_scatterplot"></div>
-        <div id="region_piechart"></div>
 
+    <div id="section_11">
+        <p class="text_11">
+            Historically, the deadliest type of natural disaster has been <span class="droughts">droughts</span>.
+            <br><br>
+            However, more recently, <span class="extreme_temp">extreme temperatures</span> and <span
+                class="earthquakes">earthquakes</span> tend to cause more deaths on average in a given year compared to
+            <span class="droughts">droughts</span>.
+            <br><br>
+            The bar chart on the right shows the average number of deaths caused by each type of natural disaster from
+            the given year to 2023.
+            <br><br>
+            As the year range approaches the present year, <span class="earthquakes">earthquakes</span> and <span
+                class="extreme_temp">extreme temperatures</span> become the most deadly disasters on average, overtaking
+            droughts.
+        </p>
+        <div id="avg_deaths_barchart"></div>
     </div>
 </body>
 
