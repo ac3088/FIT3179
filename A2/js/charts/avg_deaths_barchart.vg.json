@@ -68,7 +68,10 @@
         "y": {
             "field": "avg_deaths",
             "type": "quantitative",
-            "title": "Average Deaths"
+            "title": "Average Deaths",
+            "scale": {
+                "domainMax": 37000
+            }
         },
         "tooltip": [
             {

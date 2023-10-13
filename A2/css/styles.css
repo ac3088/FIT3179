@@ -36,9 +36,14 @@
     position: absolute;
 }
 
+#heatmap {
+    padding-left: 60px;
+    padding-top: 10px;
+}
+
 .storms {
     color: #B99D95;
-    font-weight: bold;
+    font-weight: bold
 }
 
 .floods {
@@ -58,6 +63,11 @@
 
 .extreme_temp {
     color: #5E9D3D;
+    font-weight: bold;
+}
+
+.epidemics {
+    color: #ECBD82;
     font-weight: bold;
 }
 

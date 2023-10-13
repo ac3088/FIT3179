@@ -42,3 +42,8 @@ var costLinechart = "js/charts/cost_linechart.vg.json";
 vegaEmbed('#cost_linechart', costLinechart).then(function (result) {
 
 }).catch(console.error);
+
+var heatmap = "js/charts/2d_heatmap.vg.json";
+vegaEmbed('#heatmap', heatmap).then(function (result) {
+
+}).catch(console.error);

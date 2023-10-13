@@ -1,0 +1,62 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "data/emdat-1960-2023.csv"
+    },
+    "width": 500,
+    "height": 150,
+    "background": "whitesmoke",
+    "view": {
+        "stroke": "whitesmoke"
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "DisNo.",
+                    "as": "num_dis"
+                }
+            ],
+            "groupby": [
+                "Region",
+                "Disaster Type"
+            ]
+        }
+    ],
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "field": "Disaster Type",
+            "type": "nominal",
+            "axis": {
+                "labelLimit": 60,
+                "labelAngle": -60
+            }
+        },
+        "y": {
+            "field": "Region",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "num_dis",
+            "type": "quantitative",
+            "title": "# of Disasters"
+        },
+        "tooltip": [
+            {
+                "field": "Region",
+                "type": "nominal"
+            },
+            {
+                "field": "Disaster Type",
+                "type": "nominal"
+            },
+            {
+                "field": "num_dis",
+                "type": "quantitative",
+                "title": "Number of Disasters (1960-2023)"
+            }
+        ]
+    }
+}
